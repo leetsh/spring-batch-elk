@@ -37,8 +37,8 @@ public class BatchConfig {
         return stepBuilderFactory.get("HelloJobTaskletStep").tasklet(
                 (StepContribution contribution, ChunkContext chunkContext) -> {
                     log.info("===== Tasklet called...");
-                    for(int i=0; i<100; i++) {
-                        log.info("Hello Job Batch Log", i);
+                    for(int i=0; i<200; i++) {
+                        log.info("Hello Job Batch Log :: {}", i);
                     }
                     return RepeatStatus.FINISHED;
                 }).build();
